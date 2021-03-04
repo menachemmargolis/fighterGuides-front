@@ -1,10 +1,19 @@
 import React, {useState} from 'react'
+import { NavLink, Route, Switch} from 'react-router-dom'
 
+function Character({character, onHandleClick}){
 
-function Character(){
 
     return(
-        <h3>Character</h3>
+    
+
+        <NavLink  exact className="button" to={'/characters/'+ character.id}>
+         <div onClick={() => onHandleClick(character.id)} >
+          <h1>{character.name}</h1>
+           <img src={character.gridImage}/>
+         </div>
+        </NavLink>
+      
     )
 
 }

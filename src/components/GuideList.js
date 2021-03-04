@@ -1,12 +1,26 @@
 import React, {useEffect, useState} from "react";
 import Guide from "./Guide";
 
+function GuideList({guides, onHandleGuideClick}){
 
-function GuideList(){
+
+
+  const guidesArray = guides.map((guide) => {
+    
+    return(
+        <Guide 
+        key={guide.id}
+        guide={guide}
+        onHandleGuideClick={onHandleGuideClick}
+        />
+    )
+})
+
     return(
         <>
           <h1>GuideList</h1>
-          <Guide />
+          <h2>{guidesArray}</h2>
+          
         </>
     )
 }

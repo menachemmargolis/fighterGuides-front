@@ -2,11 +2,26 @@ import React, {useEffect, useState} from "react"
 import Character from "./Character"
 
 
-function CharacterList(){
+function CharacterList({characters, onHandleClick}){
+
+    const charactersArray = characters.map((character) => {
+    
+        return(
+            <Character 
+            key={character.id}
+            character={character}
+            onHandleClick={onHandleClick}
+            />
+        )
+    })
+
+
+
+
     return(
         <>
         <h1>CharacterList</h1>
-        <Character />
+        <h2>{charactersArray}</h2>
         </>
     )
 }
