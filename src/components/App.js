@@ -50,8 +50,10 @@ console.log(guideId)
    
 
   return (
-    <div className="App">
+  <div class="App">
+    <header class="header">
       <NavBar />
+    </header>
       <Switch>
      <Route exact path="/profile">
         <Profile />
@@ -72,8 +74,10 @@ console.log(guideId)
         <GuideDetail guideShow={guideShow} />
        </Route>
       </Switch>
-    </div>
+    
+  </div>
   );
+  
 }
 
 export default App;
