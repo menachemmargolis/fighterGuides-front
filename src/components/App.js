@@ -47,6 +47,11 @@ console.log(guideId)
    function onHandleGuideClick(id){
     setGuideID(id)   
    }
+
+   function addGuideToArray(newGuide){
+     const addGuide = [...guides, newGuide]
+     setGuides(addGuide)
+   }
    
 
   return (
@@ -59,25 +64,25 @@ console.log(guideId)
         <Profile />
        </Route>   
        <Route exact path= "/characters/:id">
-        <CharacterDetail characterShow={characterShow} />
+        <CharacterDetail  handleGuides={addGuideToArray} characterShow={characterShow} />
        </Route>
         <Route exact path="/">
         <Home />
         </Route>
         <Route exact path="/characters">
-          <CharacterList onHandleClick={onHandleClick}  characters={characters} />
+          <CharacterList   onHandleClick={onHandleClick}  characters={characters} />
         </Route>
         <Route exact path="/guides">
           <GuideList onHandleGuideClick={onHandleGuideClick} guides={guides}/>
         </Route>
         <Route exact path= "/guides/:id">
-        <GuideDetail guideShow={guideShow} />
+        <GuideDetail  guideShow={guideShow} />
        </Route>
       </Switch>
     
   </div>
   );
-  
+
 }
 
 export default App;

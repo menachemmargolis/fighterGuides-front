@@ -33,12 +33,14 @@
     {
       "id": 1,
       "likes": 0,
+      "character_id": 2,
       "title": "meh",
       "image": "",
       "description": "test1"
     },
     {
       "id": 2,
+      "character_id": 4,
       "likes": 10,
       "title": "noice",
       "image": "",
@@ -46,6 +48,7 @@
     },
     {
       "id": 3,
+      "character_id": 3,
       "likes": 20,
       "title": "lolz",
       "image": "",
@@ -53,73 +56,11 @@
     },
     {
       "id": 4,
+      "character_id": 2,
       "likes": 100,
       "title": "yeer",
       "image": "",
       "description": "test4"
-    },
-    {
-      "title": "hello",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQwAAAC8CAMAAAC672BgAAAA8FBMVEX////tHCQAAAD42idYWFrsAAD42AD42iJbW1342RntGCHtEhz42BD7+/vs7OzQ0NDm5ubsAAu4uLjY2Ni6urqxsbHtCxf4tbebm5vz8/P988RwcHDAwMDg4OD29vb//fPKysp3d3cYGBiRkZH87aj54mSmpqZHR0c2Njb++uX+++xQUFD++Nxra2v76IuEhIT3q6353T9AQED97e4hISH72dr5wMH76Y/99c777KDuKTDwV1v6z9D876/54Fb65XvuNDomJibze3784+TwTVH0jpD642/43Dn2oKL88brvRkvydHf0hoj53kzxam3xYGTQVj7SAAAfY0lEQVR4nN1dZ0PiTBAOaEJXEYnYEFEBDysq9i4WbP//37w7s7vJtoRAUO/e+XQnLftkyjNlN5b118rh8eX8S+/+7at/e36eADm/7V98vr2/7HePHwq/fXk/JA/d/feL86Jt28Wi6+Zy2WyCSTabzeVcF16yzx/vXy4Pf/tav1OO59/7AIKb8wAIkmwOQbnodf+HiBx2e49FgGEQCrLkXKIkb/P/I0Cq3fdz2x4WB19JiI6cv3f/D27k+OWRADHQLAYCYttf/7iCXL4n7OKoGqFKrmhfzP+r+nH5no2vEjIcxKV+Pvz2uoaXh15ivEgQQyle/IvRtjD/OGadcO3c++W/aCIP9+PzEyjZYvH+8rdXNZJ0iVKMEwniKG73RZ2YWS6v7y3tpJf21hvLK9VfW+hg2U/YY1UKAsWXrxQLc3utpCJ3a7NTv7jgQKn2isWxeopE1n485t8+U9GA4NKqzPzmug1y+G6PGYpEMdtlX15o+Eik9xrlueXluXJjb+eI/7Ez+6uLl4VAMV5XAWpxz758Zo0tuV2ZVpxEodSYZC9W/pJoU+iNHYqE6zJnMbNDF7uzTFe7dfp6drK7e3J2tbhNf32ZvaPyW+sXpPBiF8",
-      "likes": 0,
-      "character_id": 1,
-      "id": 5
-    },
-    {
-      "title": "whats good",
-      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhMVFhUWGBgXGBgWGBgWFxodFRgWFxcXGBUYHiggGBolGxgXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGyslICUtLS0tLTAvLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0vLS0tLS0tLS0tLf/AABEIAN0A5AMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAgMFBgcBAAj/xABDEAABAwIEAwUFBQYFAwUBAAABAgMRACEEBRIxQVFhBhMicYEykaGx8AdCUsHRI2JyguHxFBUzQ5IkU7I0RHPC0hb/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QALxEAAgIBAwIEBQQCAwAAAAAAAAECAxESITEEQRMiUWEFFDJxkYGhsdFi8CMz4f/aAAwDAQACEQMRAD8AuCUV0tU8hNOaa4jidjIKrD0x/h70cRSYpcooNNjGmK7ppShSAk0HAYhSaWgWpacOTtRQy8gU2FUrPpQE7Iw5ZGneuhE0fh8IZvRRwopy+H2PuJfW1og1tV0N1PJwieNLGCR0qn8PsJ87Agg1SgmplWXJNJ/y0UL6K30LXVV+pELTXEJmpVzAUyMHFB8pbngL5iv1Be6pvuKNWAKYUunw6Nv6hUupS4ONtiakWkCgWkSakUwBeuhVVGC2Mdlkpcj6BRbCYBJoBh3UaXmWMCUwN6KdiisgRg5PBCZm5qcJ4be6hjXi5XCa4c3ltnYjHCwJIoN9FGA024ilMNAqa4pFdVau0BYwU12nYr1WWWNFeVSUmuKVW7JlweikLVFM4nFBIJNQz+biCSQkDiTApb9hsUSxeE0SyQazbNO2DYMNqKz+5f47UI528xGmG2kpH4lmT7qOHS3S3SAs6iqOzkbKwtKRTeIzEDiB52rBMw7Z4tVlYnT0bAHxqAxmbLX7Trq/4lH9a",
-      "likes": 0,
-      "character_id": 1,
-      "id": 6
-    },
-    {
-      "title": "whats good",
-      "image": "https://images.unsplash.com/photo-1459156212016-c812468e2115?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8cGxhbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "likes": 0,
-      "character_id": 1,
-      "id": 7
-    },
-    {
-      "title": "whats good",
-      "image": "https://images.unsplash.com/photo-1459156212016-c812468e2115?ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8cGxhbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "likes": 0,
-      "character_id": 1,
-      "id": 8
-    },
-    {
-      "title": "hello",
-      "image": "aSCdsv",
-      "likes": 0,
-      "character_id": 1,
-      "id": 9
-    },
-    {
-      "title": "whats good",
-      "image": "aSCdsv",
-      "likes": 0,
-      "character_id": 3,
-      "id": 10
-    },
-    {
-      "title": "hhh",
-      "image": "Insert Image Url Here",
-      "likes": 0,
-      "character_id": 2,
-      "id": 11
-    },
-    {
-      "title": "hope this work",
-      "image": "qohdfvlds",
-      "likes": 0,
-      "character_id": 2,
-      "id": 12
-    },
-    {
-      "title": "man ",
-      "image": "manny ",
-      "likes": 0,
-      "character_id": 3,
-      "id": 13
     }
   ]
 }
