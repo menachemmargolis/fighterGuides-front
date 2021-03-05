@@ -1,4 +1,3 @@
-
 {
   "toys": [
     {
@@ -29,39 +28,39 @@
       "description": 1234,
       "detailImage": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png"
     }
-  
   ],
-  "guides":[
+  "guides": [
     {
       "id": 1,
-      "likes":0,
-      "title":"meh",
-      "image":"",
-      "description":"test1"
+      "likes": 0,
+      "character_id": 2,
+      "title": "meh",
+      "image": "",
+      "description": "test1"
     },
     {
       "id": 2,
-      "likes":10,
-      "title":"noice",
-      "image":"",
-      "description":"test2"
+      "character_id": 4,
+      "likes": 10,
+      "title": "noice",
+      "image": "",
+      "description": "test2"
     },
     {
       "id": 3,
-      "likes":20,
-      "title":"lolz",
-      "image":"",
-      "description":"test3"
+      "character_id": 3,
+      "likes": 20,
+      "title": "lolz",
+      "image": "",
+      "description": "test3"
     },
     {
       "id": 4,
-      "likes":100,
-      "title":"yeer",
-      "image":"",
-      "description":"test4"
+      "character_id": 2,
+      "likes": 100,
+      "title": "yeer",
+      "image": "",
+      "description": "test4"
     }
-    
   ]
-    
-  
 }

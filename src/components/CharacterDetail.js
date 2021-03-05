@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-
-function CharacterDetail({characterShow }){
+import GuideForm from "./GuideForm"
+function CharacterDetail({characterShow, guides, handleGuides }){
 
     const characterInfo = characterShow.map((c) => {
-    
         return(
             <>
             <div>   
@@ -18,6 +17,7 @@ function CharacterDetail({characterShow }){
     return(
     <div>
         {characterInfo}
+        < GuideForm guides={guides} handleGuides={handleGuides} characterId={characterShow[0].id} characterName={characterShow[0].name}/>
     </div>
     )
 }

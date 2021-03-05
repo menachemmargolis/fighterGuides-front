@@ -11,6 +11,7 @@ function CharacterList({characters, onHandleClick}){
             key={character.id}
             character={character}
             onHandleClick={onHandleClick}
+   
             />
         )
     })
