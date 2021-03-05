@@ -25,7 +25,7 @@
     ]
   },
   "scripts": {
-    "start": "json-server --watch db.json -p 3006 & open http://localhost:3006/toys &  PORT=3007 react-scripts start && fg"
+    "start": " PORT=3007 react-scripts start && fg "
   },
   "browserslist": {
     "production": [

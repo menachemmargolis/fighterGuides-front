@@ -6,7 +6,7 @@ function Guide({guide, onHandleGuideClick}){
         <NavLink  exact className="button" to={'/guides/'+ guide.id}>
         <div onClick={() => onHandleGuideClick(guide.id)} >
          <h1>{guide.title}</h1>
-          <img src={guide.image}/>
+          <img src={guide.guide_image}/>
           <p> Likes:{guide.likes}</p>
         </div>
        </NavLink>

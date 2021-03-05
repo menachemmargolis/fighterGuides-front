@@ -21,17 +21,19 @@ function App() {
   
   const guideShow = guides.filter((g) => g.id == guideId )
 
-console.log(guideId)
+
   useEffect(() => {
-    fetch(`http://localhost:3006/toys`)
+    fetch(`http://localhost:3000/characters`)
     .then((r)=>r.json())
     .then(setCharacters)
-    fetch(`http://localhost:3006/guides`)
+    fetch(`http://localhost:3000/guides`)
     .then((r)=>r.json())
     .then(setGuides)
   }, [])
   
-
+  console.log(characters)
+  
+  
   
 
 

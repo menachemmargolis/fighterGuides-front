@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { NavLink, Route, Switch} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 function Character({character, onHandleClick}){
 
@@ -10,7 +10,7 @@ function Character({character, onHandleClick}){
         <NavLink exact className="button" to={'/characters/'+ character.id}>
          <div onClick={() => onHandleClick(character.id)} >
           <h1>{character.name}</h1>
-           <img src={character.gridImage}/>
+           <img src={character.grid_image}/>
          </div>
         </NavLink>
       
