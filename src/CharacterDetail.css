@@ -1,0 +1,35 @@
+.title {
+ 
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 5;
+    padding: 2em;
+    border: none;
+    border-top: 5px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+    flex-wrap: wrap;
+     
+}
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 10;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 1px 3px 0 #070707, 0 0 0 1px #2b2b2c;
+    margin-top: 100px;
+    max-width: 75%;
+    background-color: #dbd8d8fd;
+    margin-left: 10%;
+}
+
+.col-sm-6.px-3 {
+    padding-top: 3rem;
+    position: center;
+
+}

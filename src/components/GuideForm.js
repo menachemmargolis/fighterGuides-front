@@ -5,8 +5,8 @@ import React, {useState} from "react";
 function GuideForm({characterId, characterName, handleGuides}){
     const [formData, SetFormData] = useState({
         title: "",
-        image: "",
-        description: "",
+        guide_image: "",
+        content: "",
         likes: 0
     })
 
@@ -24,14 +24,15 @@ function GuideForm({characterId, characterName, handleGuides}){
         e.preventDefault()
 
         const newGuide = {
+           user_id: 2,
            title: formData.title,
-           image: formData.image,
-           descrition: formData.descrition,
+           guide_image: formData.guide_image,
+           content: formData.content,
            likes: formData.likes,
            character_id: characterId
         }
        
-        fetch(`http://localhost:3006/guides`,{
+        fetch(`http://localhost:3000/guides`,{
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(newGuide)
@@ -54,13 +55,13 @@ function GuideForm({characterId, characterName, handleGuides}){
                     <input  value={characterName} onChange={handleChange} type="text" name=""/>
                     <br></br>
                 <label htmlFor="image"> Image URL: </label>
-                    <input value={formData.image} onChange={handleChange} type="text" name="image" placeholder="Image URL"/>
+                    <input value={formData.guide_image} onChange={handleChange} type="text" name="guide_image" placeholder="Image URL"/>
                     <br></br>
                 <label htmlFor="title"> Title: </label>
                 <input value={formData.title} onChange={handleChange} type="text" name="title" placeholder="Guide Title Here"/>
                     <br></br>
                 <label htmlFor="title"> Guide Text </label>
-                <input value={formData.description} onChange={handleChange} type="text" name="description" placeholder="Write Your Guide Here"/>
+                <textarea value={formData.content} onChange={handleChange} type="text" name="content" placeholder="Write Your Guide Here"/>
                 <br></br>
                 <button type="submit" class="btn btn-primary">Create Guide</button>
             </form>
