@@ -1,6 +1,6 @@
-import React,{useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Profile from "./Profile"
+
 
 
 function NavBar(){
@@ -18,17 +18,17 @@ function NavBar(){
 
         
    
-<header class="header">
-    <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container"><Link to="/" class="navbar-brand text-uppercase font-weight-bold">FighterGuidez</Link>
+<header className="header">
+    <nav className="navbar navbar-expand-lg fixed-top py-3">
+        <div className="container"><Link to="/" className="navbar-brand text-uppercase font-weight-bold">FighterGuidez</Link>
             
             
-            <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><Link to="/" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only"></span></Link></li>
-                    <li class="nav-item"><Link to="/characters" class="nav-link text-uppercase font-weight-bold">Characters<span class="sr-only"></span></Link></li>
-                    <li class="nav-item"><Link to="/guides" class="nav-link text-uppercase font-weight-bold">Guides<span class="sr-only"></span></Link></li>
-                    <li class="nav-item"><Link to="/profile/:id" class="nav-link text-uppercase font-weight-bold">Profile<span class="sr-only"></span></Link></li>
+            <div id="navbarSupportedContent" className="collapse navbar-collapse">
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active"><Link to="/" className="nav-link text-uppercase font-weight-bold">Home <span className="sr-only"></span></Link></li>
+                    <li className="nav-item"><Link to="/characters" className="nav-link text-uppercase font-weight-bold">Characters<span className="sr-only"></span></Link></li>
+                    <li className="nav-item"><Link to="/guides" className="nav-link text-uppercase font-weight-bold">Guides<span className="sr-only"></span></Link></li>
+                    <li className="nav-item"><Link to="/profile/:id" className="nav-link text-uppercase font-weight-bold">Profile<span className="sr-only"></span></Link></li>
                 </ul>
             </div>
         </div>

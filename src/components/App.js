@@ -1,7 +1,6 @@
-import logo from '../logo.svg';
 import React, {useState, useEffect} from "react"
 import '../App.css';
-import { Redirect, Switch, Route} from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import Home from "./Home"
 import CharacterList from "./CharacterList"
 import GuideList from "./GuideList"
@@ -20,9 +19,9 @@ function App() {
  
   
   // filter out all other characters so we only send the character with this id  down to character detail
-  const characterShow = characters.filter((c) => c.id == characterId )
+  const characterShow = characters.filter((c) => c.id === characterId )
   
-  const guideShow = guides.filter((g) => g.id == guideId )
+  const guideShow = guides.filter((g) => g.id === guideId )
 
 
   useEffect(() => {
@@ -37,7 +36,7 @@ function App() {
     .then(setCurrentUser)
   }, [])
   
-  console.log(currentUser)
+
   
   
 
@@ -54,6 +53,8 @@ function App() {
     setGuideID(id)   
    }
 
+  
+
    function addGuideToArray(newGuide){
      const addGuide = [...guides, newGuide]
      setGuides(addGuide)
@@ -61,8 +62,8 @@ function App() {
    
 
   return (
-  <div class="App">
-    <header class="header">
+  <div className="App">
+    <header className="header">
       <NavBar />
     </header>
       <Switch>
@@ -70,7 +71,7 @@ function App() {
         <Profile onHandleGuideClick={onHandleGuideClick} user={currentUser} guides={guides}/>
        </Route>   
        <Route exact path= "/characters/:id">
-        <CharacterDetail onHandleGuideClick={onHandleGuideClick} guides={guides} handleGuides={addGuideToArray} characterShow={characterShow} />
+        <CharacterDetail currentUser={currentUser} onHandleGuideClick={onHandleGuideClick} guides={guides} handleGuides={addGuideToArray} characterShow={characterShow} />
        </Route>
         <Route exact path="/">
         <Home onHandleGuideClick={onHandleGuideClick} guides={guides}/>
@@ -84,7 +85,7 @@ function App() {
           </GuideList>
         </Route>
         <Route exact path= "/guides/:id">
-        <GuideDetail  guideShow={guideShow} currentUser={currentUser} />
+        <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides} guideShow={guideShow} currentUser={currentUser} />
        </Route>
       </Switch>
     

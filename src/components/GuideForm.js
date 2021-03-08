@@ -1,14 +1,15 @@
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from "react";
 
-function GuideForm({characterId, characterName, handleGuides}){
+function GuideForm({characterId, characterName, handleGuides, currentUser}){
     const [formData, SetFormData] = useState({
         title: "",
         guide_image: "",
         content: "",
         likes: 0
     })
+
+   
 
     function handleChange(e){
         
@@ -24,7 +25,7 @@ function GuideForm({characterId, characterName, handleGuides}){
         e.preventDefault()
 
         const newGuide = {
-           user_id: 2,
+           user_id: currentUser.id,
            title: formData.title,
            guide_image: formData.guide_image,
            content: formData.content,
