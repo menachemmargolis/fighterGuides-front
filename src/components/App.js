@@ -16,10 +16,11 @@ function App() {
   const [guides, setGuides] = useState([])
   const [guideId, setGuideID] = useState(null)
   const [currentUser, setCurrentUser] = useState("")
+
  
   
   // filter out all other characters so we only send the character with this id  down to character detail
-  const characterShow = characters.filter((c) => c.id === characterId )
+  
   
   const guideShow = guides.filter((g) => g.id === guideId )
 
@@ -34,6 +35,7 @@ function App() {
     fetch(`http://localhost:3000/me`)
     .then(res => res.json())
     .then(setCurrentUser)
+
   }, [])
   
 
@@ -71,7 +73,7 @@ function App() {
         <Profile onHandleGuideClick={onHandleGuideClick} user={currentUser} guides={guides}/>
        </Route>   
        <Route exact path= "/characters/:id">
-        <CharacterDetail currentUser={currentUser} onHandleGuideClick={onHandleGuideClick} guides={guides} handleGuides={addGuideToArray} characterShow={characterShow} />
+        <CharacterDetail currentUser={currentUser} onHandleGuideClick={onHandleGuideClick} guides={guides} handleGuides={addGuideToArray} characterId = {characterId} />
        </Route>
         <Route exact path="/">
         <Home onHandleGuideClick={onHandleGuideClick} guides={guides}/>
