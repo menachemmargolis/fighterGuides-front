@@ -7,12 +7,12 @@ function CharacterList({characters, onHandleClick}){
     const charactersArray = characters.map((character) => {
     
         return(
+            <div class="card-deck">
             <Character 
             key={character.id}
             character={character}
-            onHandleClick={onHandleClick}
-   
-            />
+            onHandleClick={onHandleClick}/>
+            </div>
         )
     })
 

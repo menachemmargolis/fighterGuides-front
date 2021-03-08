@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Guide from "./Guide";
 
-function GuideList({guides, onHandleGuideClick}){
+function GuideList({guides, onHandleGuideClick, children}){
 
 
 
@@ -18,7 +18,7 @@ function GuideList({guides, onHandleGuideClick}){
 
     return(
         <>
-          <h1>GuideList</h1>
+          {children}
           <h2>{guidesArray}</h2>
           
         </>

@@ -28,6 +28,7 @@ function NavBar(){
                     <li class="nav-item active"><Link to="/" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only"></span></Link></li>
                     <li class="nav-item"><Link to="/characters" class="nav-link text-uppercase font-weight-bold">Characters<span class="sr-only"></span></Link></li>
                     <li class="nav-item"><Link to="/guides" class="nav-link text-uppercase font-weight-bold">Guides<span class="sr-only"></span></Link></li>
+                    <li class="nav-item"><Link to="/profile/:id" class="nav-link text-uppercase font-weight-bold">Profile<span class="sr-only"></span></Link></li>
                 </ul>
             </div>
         </div>

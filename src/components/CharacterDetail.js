@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from "react";
 import GuideForm from "./GuideForm"
+import GuideList from "./GuideList";
 import '../CharacterDetail.css';
-function CharacterDetail({characterShow, guides, handleGuides }){
+function CharacterDetail({characterShow, guides, handleGuides, onHandleGuideClick }){
+
+    const charGuide = guides.filter((g) =>  
+       (g.character_id === characterShow[0].id)
+    )
+   
 
     const characterInfo = characterShow.map((c) => {
         return(
@@ -30,9 +36,12 @@ function CharacterDetail({characterShow, guides, handleGuides }){
     return(
     <div>
         {characterInfo}
+        <GuideList onHandleGuideClick={onHandleGuideClick} guides={charGuide} >
+            <h1>character guides</h1>
+        </GuideList>
         < GuideForm guides={guides} handleGuides={handleGuides} characterId={characterShow[0].id} characterName={characterShow[0].name}/>
     </div>
     )
 }
 
-export default CharacterDetail
+export default CharacterDetail;
