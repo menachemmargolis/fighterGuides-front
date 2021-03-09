@@ -1,14 +1,28 @@
-import React, {useState} from "react";
-import {useHistory} from "react-router-dom"
+import React, {useState, useEffect} from "react";
+import {useHistory, useParams} from "react-router-dom"
 import UpdateGuideForm from "./UpdateGuideForm"
 
 
-function GuideDetail({characters, guideShow, children, currentUser, setGuides, guides}){
-    const [newLikes, setNewLikes] = useState(guideShow[0].likes)
+function GuideDetail({characters, children, currentUser, setGuides, guides}){
+    const params = useParams();
+    const id = params.id;
+    const guideShow = guides.filter((g) => g.id == id )
+    const [isLoaded, setIsLoaded] = useState(false);
+    
     const [formDisplay, setFormDisplay] = useState(false)
+    const [guide, setGuide] = useState(null)
+    // console.log(guideShow)
+    
 
+    useEffect(() =>{
+        fetch(`http://localhost:3000/guides/${id}`)
+        .then(res => res.json())
+        .then(setGuide)
+        setIsLoaded(true);
+      }, [id])
 
     const history = useHistory();
+    if (!isLoaded) return <h2>Loading...</h2>;
   function handleDeleteGuide(id){
       
     fetch(`http://localhost:3000/guides/${id}`,{
@@ -26,7 +40,7 @@ function GuideDetail({characters, guideShow, children, currentUser, setGuides, g
 
    function handleUpdateLikes(id){
      
-    const newLikes = guideShow[0].likes += 1
+    const newLikes = guide.likes += 1
      
      fetch(`http://localhost:3000/guides/${id}`,{
        method: "PATCH",
@@ -34,7 +48,7 @@ function GuideDetail({characters, guideShow, children, currentUser, setGuides, g
        body: JSON.stringify({likes: newLikes } )
      })
      .then(res => res.json())
-     .then(data => setNewLikes(data.likes))
+     .then(data => setGuide(data) ) 
    }
   
    function updateGuide(){
@@ -42,37 +56,35 @@ function GuideDetail({characters, guideShow, children, currentUser, setGuides, g
 
    }
 
-    const guideInfo = guideShow.map((g) => {
     
-      const whatToDisplay =   formDisplay ? <UpdateGuideForm guides={guides} setGuides={setGuides} characters={characters} updatedGuide={g}/> :  
-      <div>
-        <h1>{g.title}</h1> 
-        <h2>Guide detail </h2>
-        <h3>{g.name}</h3>
-        <img src={g.guide_image} alt={g.title}/>
-        <h3>{g.content}</h3>
-        <h3>Likes: {newLikes}</h3>
-        <button onClick={() => handleUpdateLikes(g.id)}>❤️</button> 
-      </div> 
+      const mainDisplay =  guide !== null?
+
+    (<div>
+      <h1>{guide.title}</h1> 
+      <h2>Guide detail </h2>
+      <h3>{guide.name}</h3>
+      <img src={guide.guide_image} alt={guide.title}/>
+      <h3>{guide.content}</h3>
+      <h3>Likes: {guide.likes}</h3>
+      <button onClick={() => handleUpdateLikes(guide.id)}>❤️</button> 
+    </div>):<h1>Loading...</h1>
+      
+      const whatToDisplay = formDisplay ? <UpdateGuideForm guides={guides} setGuides={setGuides} characters={characters} updatedGuide={guide}/> :mainDisplay
+      
+      const userId = guide !== null ? guide.user_id : 0 
   
 
         return (
             <>
             {whatToDisplay}
-            {currentUser.id === guideShow[0].user_id ? 
+            {currentUser.id === userId ? 
             <>
             <button onClick={updateGuide}>edit</button>
-            <button onClick={() => handleDeleteGuide(g.id)}>delete</button>
+            <button onClick={() => handleDeleteGuide(guide.id)}>delete</button>
             </>
            : null}
-           </>
-        )
-    } )
-    return(
-        <>
-       {guideInfo}
-       </>
-    )
+           </>)
+      
 }
 
 export default GuideDetail;

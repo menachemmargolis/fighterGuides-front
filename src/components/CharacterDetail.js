@@ -10,7 +10,7 @@ function CharacterDetail({ characterId, guides, handleGuides, onHandleGuideClick
     const params = useParams();
     const id = params.id;
    
-    console.log(characterId)
+    
 
 
     const  charGuide = characterDetail !== null ?   guides.filter((g) => 
@@ -35,7 +35,7 @@ function CharacterDetail({ characterId, guides, handleGuides, onHandleGuideClick
                     <div className="row">
                         <div>
                             
-                            <img className="col-sm-6 px-3" src={ characterDetail !== null ? characterDetail.detail_image : <p>Loading.....</p>} alt={characterDetail !== null ? characterDetail.name : <h1>Loading.....</h1>}/>
+                            <img className="col-sm-6 px-3" src={ characterDetail !== null ? characterDetail.detail_image :"https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg"} alt={characterDetail !== null ? characterDetail.name : <h1>Loading.....</h1>}/>
                                 
                             <div className="card-block px-6">    
                                 <h4 className="card-title">{characterDetail !== null ? characterDetail.name : <p>Loading.....</p>}</h4>

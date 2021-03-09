@@ -22,7 +22,7 @@ function App() {
   // filter out all other characters so we only send the character with this id  down to character detail
   
   
-  const guideShow = guides.filter((g) => g.id === guideId )
+  // const guideShow = guides.filter((g) => g.id === guideId )
 
 
   useEffect(() => {
@@ -87,7 +87,7 @@ function App() {
           </GuideList>
         </Route>
         <Route exact path= "/guides/:id">
-        <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides} guideShow={guideShow} currentUser={currentUser} />
+        <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides}  currentUser={currentUser} />
        </Route>
       </Switch>
     
