@@ -6,3 +6,10 @@
     position: relative;
 
 }
+
+.img-max {
+    max-width: 400px;
+    width:100%;
+    max-height: 500px;
+    height: 100%
+  }

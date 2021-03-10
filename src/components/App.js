@@ -10,6 +10,7 @@ import CharacterDetail from "./CharacterDetail"
 import GuideDetail from "./GuideDetail"
 import GuideForm from "./GuideForm"
 import Alert from 'react-bootstrap/Alert'
+import backgroundVideo from '../GuiltyGearTrailer.mp4'
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -83,6 +84,9 @@ function App() {
 
   return (
   <div className="App">
+    <video autoPlay loop muted id='video'>
+      <source src={backgroundVideo} type='video/mp4'/>
+    </video>
     <header className="header">
       <NavBar />
     </header>
@@ -107,7 +111,7 @@ function App() {
         <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides}  currentUser={currentUser} />
        </Route>
        <Route exact path= "/guideForm">
-       < GuideForm currentUser={currentUser} guides={guides} handleGuides={addGuideToArray} id={characterId}> 
+       < GuideForm characters ={characters}currentUser={currentUser} guides={guides} handleGuides={addGuideToArray} id={characterId}> 
            <select onChange={getChartId}>
              {allNames}
            </select>

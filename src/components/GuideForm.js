@@ -1,9 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom"
+import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
+import Form from "react-bootstrap/Form"
 
-
-function GuideForm({ handleGuides, currentUser, id, children}){
+function GuideForm({characters, handleGuides, currentUser, id, children}){
     const history = useHistory();
     const [formData, SetFormData] = useState({
         title: "",
@@ -11,7 +13,6 @@ function GuideForm({ handleGuides, currentUser, id, children}){
         content: "",
         likes: 0
     })
-
 
    
 
@@ -51,22 +52,32 @@ function GuideForm({ handleGuides, currentUser, id, children}){
 
       
 
- 
+    const allNames = characters.map((c) => <option>{c.name}</option>)
     return(
         <>
-       <form onSubmit={handleSubmit} id="hello">
-            {children}
-           <input type="text" onChange={handleChange} name="title" value={formData.title} placeholder="title"/>
-           <input type="text" onChange={handleChange} name="content" value={formData.content} placeholder="content"/>
-           <input type="text" onChange={handleChange} name="guide_image" value={formData.image} placeholder="image url"/>
-           <input type='submit'/>
-       </form>
-       <style jsx>{`
-        #hello {
-            margin-top:40px;
-        }
-       `}
-   </style>
+           
+              <Form className='bg-dark text-white' style={{paddingTop: '20px', marginTop: '12rem', maxWidth: "40%"}}onSubmit={handleSubmit} >
+                <Form.Group controlId="formBasicTitle">
+                <Form.Label>Select a Character:</Form.Label>
+                <Form.Control as="select">
+                  {allNames}
+                </Form.Control>
+                    <Form.Label style={{paddingTop: '20px'}}>Title</Form.Label>
+                    <Form.Control type="text" onChange={handleChange} name="title" value={formData.title} placeholder="title" />
+                </Form.Group>
+                <Form.Group controlId="formBasicImage">
+                    <Form.Label>Image Url</Form.Label>
+                    <Form.Control type="text" onChange={handleChange} name="guide_image" value={formData.image} placeholder="image url"  />
+                </Form.Group>
+                <Form.Group controlId="formBasicContent">
+                    <Form.Label>Write Your Walkthrough Here:</Form.Label>
+                    <Form.Control as="textarea" rows={7} onChange={handleChange} name="content" value={formData.content} placeholder="content" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+                </Form>
+                
      </>  
     )
     

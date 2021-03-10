@@ -8,7 +8,7 @@ function Home({guides, onHandleGuideClick}){
         <div>
         <h2>Home Page</h2>
         <GuideList onHandleGuideClick={onHandleGuideClick} guides={guides}>
-            <h1>Latest Guides</h1>
+            <h2>Latest Guides</h2>
         </GuideList>
         </div>
     )

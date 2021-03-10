@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {useHistory, useParams} from "react-router-dom"
 import UpdateGuideForm from "./UpdateGuideForm"
-
+import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
 
 function GuideDetail({characters, children, currentUser, setGuides, guides}){
     const params = useParams();
@@ -60,33 +61,41 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
 
    }
 
-    
+
+
+   const userId = guide !== null ? guide.user_id : 0 
       const mainDisplay =  guide !== null?
 
-    (<div>
-      <h1>{guide.title}</h1> 
-      <h2>Guide detail </h2>
-      <h3>{guide.name}</h3>
-      <img src={guide.guide_image} alt={guide.title}/>
-      <h3>{guide.content}</h3>
-      <h3>Likes: {guide.likes}</h3>
-      <button onClick={() => handleUpdateLikes(guide.id)}>❤️</button> 
-    </div>):<h1>Loading...</h1>
+    (
+      <Card className= "guide-detail-card bg-dark text-white" style={{ width: '34rem', margin: '0 auto',marginTop: '100px' }}>
+      <Card.Img variant="top" src={guide.guide_image} style={{ height:'100px', width:'100px',margin: '0 auto' }}/>
+      <Card.Body>
+        <Card.Title>{guide.title}</Card.Title>
+        <Card.Text>
+         {guide.content}
+         <hr></hr>
+         Likes : {guide.likes}
+        </Card.Text>
+        <Button onClick={() => handleUpdateLikes(guide.id)}  style={{borderRadius: '10px', marginRight: '8px'  }} variant="primary" size="sm">👍</Button>
+        {currentUser.id === userId ? 
+            <>
+            <Button onClick={updateGuide}  style={{borderRadius: '10px', marginRight: '8px'  }} variant="primary" size="sm">edit</Button>
+            <Button onClick={() => handleDeleteGuide(guide.id)}  style={{borderRadius: '10px', marginRight: '8px'  }} variant="primary" size="sm">delete</Button>
+            </>
+           : null}
+      </Card.Body>
+    </Card>):<h1>Loading...</h1>
+    
+
       
-      const whatToDisplay = formDisplay ? <UpdateGuideForm guides={guides} setGuides={setGuides} characters={characters} updatedGuide={guide}/> :mainDisplay
+    const whatToDisplay = formDisplay ? <UpdateGuideForm guides={guides} setGuides={setGuides} characters={characters} updatedGuide={guide}/> :mainDisplay
       
-      const userId = guide !== null ? guide.user_id : 0 
+    
   
 
         return (
             <>
             {whatToDisplay}
-            {currentUser.id === userId ? 
-            <>
-            <button onClick={updateGuide}>edit</button>
-            <button onClick={() => handleDeleteGuide(guide.id)}>delete</button>
-            </>
-           : null}
            </>)
       
 }
