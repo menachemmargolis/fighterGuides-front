@@ -36,8 +36,6 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
     .then(history.push("/guides"))
     
   }
-
-
    function handleUpdateLikes(id){
      
     const newLikes = guide.likes += 1
@@ -48,7 +46,13 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
        body: JSON.stringify({likes: newLikes } )
      })
      .then(res => res.json())
-     .then(data => setGuide(data) ) 
+     .then(data => {
+       const filtiring = guides.map((g) => {
+        return g.id === id ? {...g, likes:data.likes} : g 
+       })
+       setGuides(filtiring)
+       setGuide(data)}
+      ) 
    }
   
    function updateGuide(){

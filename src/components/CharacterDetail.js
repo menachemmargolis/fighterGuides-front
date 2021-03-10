@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 // import Spinner from 'react-bootstrap/Spinner'
 
 
-function CharacterDetail({ characterId, guides, handleGuides, onHandleGuideClick, currentUser }){
+function CharacterDetail({guides, handleGuides, onHandleGuideClick, currentUser }){
     const [characterDetail, setCharacterDetail] = useState(null)
     const params = useParams();
     const id = params.id;
@@ -57,7 +57,6 @@ function CharacterDetail({ characterId, guides, handleGuides, onHandleGuideClick
         <GuideList style={{maxHeight: '10%'}} onHandleGuideClick={onHandleGuideClick} guides={ charGuide}  >
             <h1>character guides</h1>
         </GuideList>
-        < GuideForm currentUser={currentUser} guides={guides} handleGuides={handleGuides} characterId={ characterDetail !== null ?  characterDetail.id :<h1>Loading..</h1>} characterName={characterDetail !== null ?  characterDetail.name :<h1>Loading..</h1>}/> 
   
     </div>
         

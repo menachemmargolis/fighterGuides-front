@@ -8,11 +8,12 @@ import Profile from "./Profile"
 import NavBar from "./NavBar"
 import CharacterDetail from "./CharacterDetail"
 import GuideDetail from "./GuideDetail"
-
+import GuideForm from "./GuideForm"
+import Alert from 'react-bootstrap/Alert'
 
 function App() {
   const [characters, setCharacters] = useState([])
-  const [characterId, setCharacterID] = useState(null)
+  const [characterId, setCharacterID] = useState(1)
   const [guides, setGuides] = useState([])
   const [guideId, setGuideID] = useState(null)
   const [currentUser, setCurrentUser] = useState("")
@@ -60,8 +61,25 @@ function App() {
    function addGuideToArray(newGuide){
      const addGuide = [...guides, newGuide]
      setGuides(addGuide)
+     return (
+        <Alert variant="success">
+      <Alert.Heading>Guide Created!</Alert.Heading></Alert>
+      
+     )
    }
    
+
+   function getChartId(e){
+    const getId = characters.filter((c) => c.name === e.target.value)
+
+    const setId = getId[0].id 
+
+    setCharacterID(setId)
+  }
+
+   const allNames = characters.map((c) => <option>{c.name}</option>)
+
+
 
   return (
   <div className="App">
@@ -88,6 +106,15 @@ function App() {
         <Route exact path= "/guides/:id">
         <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides}  currentUser={currentUser} />
        </Route>
+       <Route exact path= "/guideForm">
+       < GuideForm currentUser={currentUser} guides={guides} handleGuides={addGuideToArray} id={characterId}> 
+           <select onChange={getChartId}>
+             {allNames}
+           </select>
+
+        </GuideForm>
+       </Route>
+
       </Switch>
     
   </div>
