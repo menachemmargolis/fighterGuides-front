@@ -22,7 +22,7 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
       }, [id])
 
     const history = useHistory();
-    if (!isLoaded) return <h2>Loading...</h2>;
+    if (!isLoaded) return <img src="https://i.gifer.com/ZZ5H.gif"/>;
   function handleDeleteGuide(id){
       
     fetch(`http://localhost:3000/guides/${id}`,{

@@ -83,7 +83,6 @@ function App() {
         </Route>
         <Route exact path="/guides">
           <GuideList onHandleGuideClick={onHandleGuideClick} guides={guides}>
-            <h1>All Guides</h1>
           </GuideList>
         </Route>
         <Route exact path= "/guides/:id">

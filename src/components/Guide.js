@@ -1,15 +1,23 @@
 import React from "react"
-import { NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import Carousel from 'react-bootstrap/Carousel'
+import '../Guide.css';
 
 function Guide({guide, onHandleGuideClick}){
     return(
-        <NavLink  exact className="button" to={'/guides/'+ guide.id}>
-        <div onClick={() => onHandleGuideClick(guide.id)} >
+       
+            <Carousel.Caption style={{position: 'relative', maxHeight: '50rem'}}>
+        <Link  exact className="button" to={'/guides/'+ guide.id}>
+        <div className= 'card d-block w-50 h-50' onClick={() => onHandleGuideClick(guide.id)} >
+          <img  src={guide.guide_image} alt={guide.title}/>
          <h1>{guide.title}</h1>
-          <img src={guide.guide_image} alt={guide.title}/>
           <p> Likes:{guide.likes}</p>
         </div>
-       </NavLink>
+       </Link>
+         </Carousel.Caption>
+    
+       
+     
     )
 }
 

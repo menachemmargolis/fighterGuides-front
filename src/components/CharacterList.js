@@ -1,8 +1,8 @@
 import React from "react"
 import Character from "./Character"
-import Card from 'react-bootstrap/Card'
+import '../CharacterList.css';
+import CardColumns from 'react-bootstrap/CardColumns'
 import CardDeck from 'react-bootstrap/CardDeck'
-
 
 function CharacterList({characters, onHandleClick}){
 
@@ -23,8 +23,8 @@ function CharacterList({characters, onHandleClick}){
 
     return(
         <>
-        <CardDeck>
-        <h2>{charactersArray}</h2>
+        <CardDeck style={{ marginLeft: '15%', marginRight: '10%', display: 'flex', flexDirection: 'row'}}>
+        {charactersArray}
         </CardDeck>
         </>
     )

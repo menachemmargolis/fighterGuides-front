@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from "react";
+import Form from 'react-bootstrap/Form'
 
 function GuideForm({characterId, characterName, handleGuides, currentUser}){
     const [formData, SetFormData] = useState({
@@ -44,33 +45,36 @@ function GuideForm({characterId, characterName, handleGuides, currentUser}){
    
 
     return(
+     
         <div class="container">
 	        <div class="row">
                 <div class="col-md-4">
 		        <div class="form_main">
        
-            <h2 class="heading">New Guide For {characterName} </h2>
-            <div class="form">
+             <h2 class="heading">New Guide For {characterName} </h2>
+             <div class="form"> 
+           
             <form onSubmit={handleSubmit} class="form-group">
                 <label> Character name: </label>
-                    <input  value={characterName} onChange={handleChange} type="text" name=""/>
-                    <br></br>
+                <input  value={characterName} onChange={handleChange} type="text" name=""/>
+                <br></br>
                 <label htmlFor="image"> Image URL: </label>
-                    <input value={formData.guide_image} onChange={handleChange} type="text" name="guide_image" placeholder="Image URL"/>
-                    <br></br>
+                <input value={formData.guide_image} onChange={handleChange} type="text" name="guide_image" placeholder="Image URL"/>
+                <br></br>
                 <label htmlFor="title"> Title: </label>
                 <input value={formData.title} onChange={handleChange} type="text" name="title" placeholder="Guide Title Here"/>
-                    <br></br>
+                <br></br>
                 <label htmlFor="title"> Guide Text </label>
                 <textarea value={formData.content} onChange={handleChange} type="text" name="content" placeholder="Write Your Guide Here"/>
                 <br></br>
                 <button type="submit" class="btn btn-primary">Create Guide</button>
-            </form>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
+                </form>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div> 
+           
     )
     
 }
