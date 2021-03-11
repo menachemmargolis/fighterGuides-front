@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 function GuideList({guides, onHandleGuideClick, children}){
 
 
-
   const guidesArray = guides.map((guide) => {
     
+
+
     return(
       <Carousel.Item className='w-100 h-50'>
         <Guide 

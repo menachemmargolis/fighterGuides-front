@@ -41,7 +41,7 @@ function UpdateGuideForm({updatedGuide, characters, guides, setGuides}){
 
     .then( data => {
      const filterGuides = guides.map((g) => {
-         return g.id === updatedGuide.id ? {...g,content:data.content, title:data.title, likes:data.likes}:g
+         return g.id === updatedGuide.id ? {...g,content:data.content, title:data.title, likes:data.likes, guide_image:data.guide_image}:g
      })
      setGuides(filterGuides)
     })
@@ -100,7 +100,7 @@ function UpdateGuideForm({updatedGuide, characters, guides, setGuides}){
         </Form.Group>
         <Form.Group controlId="formBasicContent">
             <Form.Label>Content</Form.Label>
-            <Form.Control as="textarea" rows={7} onChange={handleChange} name="content" value={updateFormData.content} placeholder="content" />
+            <Form.Control as="textarea" pattern= '([A-z0-9À-ž\s]){2,}' rows={7} onChange={handleChange} name="content" value={updateFormData.content} placeholder="content" />
         </Form.Group>
         <Button variant="primary" type="submit">
             Submit

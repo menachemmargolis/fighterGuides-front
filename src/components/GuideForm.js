@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form"
 
-function GuideForm({characters, handleGuides, currentUser, id, children}){
+function GuideForm({getChartId, characters, handleGuides, currentUser, id, children}){
     const history = useHistory();
     const [formData, SetFormData] = useState({
         title: "",
@@ -59,7 +59,7 @@ function GuideForm({characters, handleGuides, currentUser, id, children}){
               <Form className='bg-dark text-white' style={{paddingTop: '20px', marginTop: '12rem', maxWidth: "40%"}}onSubmit={handleSubmit} >
                 <Form.Group controlId="formBasicTitle">
                 <Form.Label>Select a Character:</Form.Label>
-                <Form.Control as="select">
+                <Form.Control onChange={getChartId} as="select">
                   {allNames}
                 </Form.Control>
                     <Form.Label style={{paddingTop: '20px'}}>Title</Form.Label>

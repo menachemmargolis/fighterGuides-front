@@ -12,7 +12,8 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
     
     const [formDisplay, setFormDisplay] = useState(false)
     const [guide, setGuide] = useState(null)
-    // console.log(guideShow)
+  
+
     
 
     useEffect(() =>{
@@ -55,7 +56,8 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
        setGuide(data)}
       ) 
    }
-  
+
+
    function updateGuide(){
     setFormDisplay((formDisplay) => !formDisplay)
 
@@ -67,14 +69,19 @@ function GuideDetail({characters, children, currentUser, setGuides, guides}){
       const mainDisplay =  guide !== null?
 
     (
-      <Card className= "guide-detail-card bg-dark text-white" style={{ width: '34rem', margin: '0 auto',marginTop: '100px' }}>
+      <Card className= "guide-detail-card bg-dark text-white" style={{ width: '50rem', margin: '0 auto', marginTop: '100px', paddingTop: '20px'}}>
       <Card.Img variant="top" src={guide.guide_image} style={{ height:'100px', width:'100px',margin: '0 auto' }}/>
       <Card.Body>
         <Card.Title>{guide.title}</Card.Title>
-        <Card.Text>
+        <Card.Body>
+          <p>
          {guide.content}
+         </p> 
+        </Card.Body>
+        <Card.Text>
          <hr></hr>
          Likes : {guide.likes}
+         
         </Card.Text>
         <Button onClick={() => handleUpdateLikes(guide.id)}  style={{borderRadius: '10px', marginRight: '8px'  }} variant="primary" size="sm">👍</Button>
         {currentUser.id === userId ? 

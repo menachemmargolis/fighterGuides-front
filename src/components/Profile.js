@@ -26,7 +26,7 @@ console.log(userGuide.length)
         
         
         <GuideList onHandleGuideClick={onHandleGuideClick} guides={userGuide}>
-            <h1>Your Guides</h1>
+            <h2 style={{paddingTop: '30px'}}>Your Guides</h2>
         </GuideList>
         </>
     )

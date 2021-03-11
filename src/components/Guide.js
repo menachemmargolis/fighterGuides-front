@@ -4,7 +4,10 @@ import Carousel from 'react-bootstrap/Carousel'
 import '../Guide.css';
 import Card from "react-bootstrap/Card"
 
-function Guide({guide, onHandleGuideClick}){
+function Guide({ guide, onHandleGuideClick}){
+  
+
+
   
     return(
        
@@ -13,8 +16,10 @@ function Guide({guide, onHandleGuideClick}){
           <Card style={{maxWidth: '40%'}}>
         <div className= 'bg-dark' style={{paddingTop: '30px'}} onClick={() => onHandleGuideClick(guide.id)} >
           <img className='img-max' src={guide.guide_image} alt={guide.title}/>
-         <h1>{guide.title}</h1>
-          <p className='text-white font-weight-bold'>Likes:{guide.likes}</p>
+          <hr></hr>
+         <h3>{guide.title}</h3>
+          <p className='text-white font-weight-bold'>Likes: {guide.likes}</p>
+        
         </div>
         </Card>
        </Link>

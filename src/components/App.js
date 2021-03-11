@@ -18,13 +18,10 @@ function App() {
   const [guides, setGuides] = useState([])
   const [guideId, setGuideID] = useState(null)
   const [currentUser, setCurrentUser] = useState("")
+  
 
  
   
-  // filter out all other characters so we only send the character with this id  down to character detail
-  
-  
-  // const guideShow = guides.filter((g) => g.id === guideId )
 
 
   useEffect(() => {
@@ -37,7 +34,6 @@ function App() {
     fetch(`http://localhost:3000/me`)
     .then(res => res.json())
     .then(setCurrentUser)
-
   }, [])
   
 
@@ -98,20 +94,20 @@ function App() {
         <CharacterDetail currentUser={currentUser} onHandleGuideClick={onHandleGuideClick} guides={guides} handleGuides={addGuideToArray} characterId = {characterId} />
        </Route>
         <Route exact path="/">
-        <Home onHandleGuideClick={onHandleGuideClick} guides={guides}/>
+        <Home  onHandleGuideClick={onHandleGuideClick} guides={guides}/>
         </Route>
         <Route exact path="/characters">
           <CharacterList   onHandleClick={onHandleClick}  characters={characters} />
         </Route>
         <Route exact path="/guides">
-          <GuideList onHandleGuideClick={onHandleGuideClick} guides={guides}>
-          </GuideList>
+          <GuideList onHandleGuideClick={onHandleGuideClick} guides={guides}/>
+          
         </Route>
         <Route exact path= "/guides/:id">
-        <GuideDetail  guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides}  currentUser={currentUser} />
+        <GuideDetail guides={guides} setGuides={setGuides} characters={characters} guides={guides} setGuides={setGuides}  currentUser={currentUser} />
        </Route>
        <Route exact path= "/guideForm">
-       < GuideForm characters ={characters}currentUser={currentUser} guides={guides} handleGuides={addGuideToArray} id={characterId}> 
+       < GuideForm getChartId={getChartId} characters ={characters}currentUser={currentUser} guides={guides} handleGuides={addGuideToArray} id={characterId}> 
            <select onChange={getChartId}>
              {allNames}
            </select>
